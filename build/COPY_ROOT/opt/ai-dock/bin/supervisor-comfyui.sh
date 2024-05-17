@@ -40,7 +40,8 @@ function start() {
         PLATFORM_FLAGS="--cpu"
     fi
     
-    BASE_FLAGS="--listen 127.0.0.1 --disable-auto-launch"
+    BASE_FLAGS="--listen $SERVICE_URL --disable-auto-launch"
+    printf "Printinh base flags -> $BASE_FLAGS"
     
     # Delay launch until micromamba is ready
     if [[ -f /run/workspace_sync || -f /run/container_config ]]; then
